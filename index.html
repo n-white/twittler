@@ -53,8 +53,8 @@
         // Selecting individual user feeds
 
         $('.shawndrost').on('click', function() {
-          $('.tweets').hide();
-          $('.shawndrost').show();
+          $(this).hide();
+
         });
 
         $('.sharksforcheap').on('click', function() {
@@ -71,39 +71,6 @@
           $('.tweets').hide();
           $('.douglascalhoun').show();
         });
-
-
-
-        //Refresh function
-          /*
-        var refreshFeed = function() {
-
-          var newIndex = streams.home.length - 1;
-       
-          while(newIndex >= index){
-            var tweet = streams.home[newIndex];
-            var $tweet = $('<div class="' + tweet.user + ' tweets"></div>');
-            var timestamp = $.now();
-            $tweet.html('<a class="user">' + '@' + tweet.user + '</a>' + Date(timestamp) + '' + tweet.message);
-
-            $tweet.prependTo($body);
-            newIndex -= 1;
-
-          };
-
-          refresh.prependTo($body);
-        
-          index = streams.home.length - 1
-
-          };
-            */
-          /*
-          var scheduleRefresh = function() {
-            refreshFeed();
-            window.setTimeout(scheduleRefresh, 500);
-          };
-          scheduleRefresh();
-          */
      
       });
 
