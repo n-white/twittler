@@ -20,31 +20,13 @@
         var remove = $('<div class=remove>remove</div>');
         remove.appendTo($body);
 
-
-
-        // Initial tweet feed
-
-
-        $(refresh).on('click', function() {
-
-          while(index >= 0){
-            var tweet = streams.home[index];
-            var $tweet = $('<div class="' + tweet.user + ' tweets"></div>');
-            var timestamp = $.now();
-            $tweet.html('<a class="user">' + '@' + tweet.user + '</a>' + tweet.created_at + '' + tweet.message);
-
-            $tweet.appendTo($body);
-            index -= 1;
-          };
-        });
-
         // Button click to add new tweets
 
         $(refresh).on('click', function() {
 
           var newIndex = streams.home.length - 1;
        
-          while(newIndex >= index){
+          while(newIndex > index){
             var tweet = streams.home[newIndex];
             var $tweet = $('<div class="' + tweet.user + ' tweets"></div>');
             var timestamp = $.now();
@@ -60,6 +42,7 @@
           index = streams.home.length - 1
 
         });
+
 
         $(remove).on('click', function() {
           $('.tweets').toggle()
