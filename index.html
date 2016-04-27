@@ -9,38 +9,55 @@
     <script>
 
       $(document).ready(function(){
+        
+        //Variable declarations
+
         var $body = $('body');
         $body.html('');
-
         var index = streams.home.length - 1;
-
-        var refresh = $('<a class=refresh>Refresh<a>');
+        var refresh = $('<div class=refresh>Refresh</div>');
         refresh.appendTo($body);
+        var remove = $('<div class=refresh>remove</div>');
+        remove.appendTo($body);
+
+        // Initial tweet feed
 
         while(index >= 0){
           var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
+          var $tweet = $('<div class=tweets></div>');
           var timestamp = $.now();
-          $tweet.html('<a class="user">' + '@' + tweet.user + '</a><br>' + Date(timestamp) + '<br>' + tweet.message);
+          $tweet.html('<a class="user">' + '@' + tweet.user + '</a>' + Date(timestamp) + '' + tweet.message);
 
           $tweet.appendTo($body);
           index -= 1;
         }
+
+        
+        // Button click to add new tweets
 
         $(refresh).on('click', function() {
 
-          var index = streams.home.length - 1;
+          var newIndex = streams.home.length - 1;
+       
+          while(newIndex >= index){
+            var tweet = streams.home[newIndex];
+            var $tweet = $('<div class=tweets></div>');
+            var timestamp = $.now();
+            $tweet.html('<a class="user">' + '@' + tweet.user + '</a>' + Date(timestamp) + '' + tweet.message);
 
-          while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          var timestamp = $.now();
-          $tweet.html('<a class="user">' + '@' + tweet.user + '</a><br>' + Date(timestamp) + '<br>' + tweet.message);
+            $tweet.prependTo($body);
+            newIndex -= 1;
 
-          $tweet.appendTo($body);
-          index -= 1;
-        }
+          };
 
+          refresh.prependTo($body);
+        
+          index = streams.home.length - 1
+
+        });
+
+        $(remove).on('click', function() {
+          $('.tweets').remove()
         });
 
       });
