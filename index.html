@@ -17,22 +17,27 @@
         var index = streams.home.length - 1;
         var refresh = $('<div class=refresh>Refresh</div>');
         refresh.appendTo($body);
-        var remove = $('<div class=refresh>remove</div>');
+        var remove = $('<div class=remove>remove</div>');
         remove.appendTo($body);
+
+
 
         // Initial tweet feed
 
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div class=tweets></div>');
-          var timestamp = $.now();
-          $tweet.html('<a class="user">' + '@' + tweet.user + '</a>' + Date(timestamp) + '' + tweet.message);
 
-          $tweet.appendTo($body);
-          index -= 1;
-        }
+        $(refresh).on('click', function() {
 
-        
+          while(index >= 0){
+            var tweet = streams.home[index];
+            var $tweet = $('<div class="' + tweet.user + ' tweets"></div>');
+            var timestamp = $.now();
+            $tweet.html('<a class="user">' + '@' + tweet.user + '</a>' + tweet.created_at + '' + tweet.message);
+
+            $tweet.appendTo($body);
+            index -= 1;
+          };
+        });
+
         // Button click to add new tweets
 
         $(refresh).on('click', function() {
@@ -41,9 +46,9 @@
        
           while(newIndex >= index){
             var tweet = streams.home[newIndex];
-            var $tweet = $('<div class=tweets></div>');
+            var $tweet = $('<div class="' + tweet.user + ' tweets"></div>');
             var timestamp = $.now();
-            $tweet.html('<a class="user">' + '@' + tweet.user + '</a>' + Date(timestamp) + '' + tweet.message);
+            $tweet.html('<a class="user">' + '@' + tweet.user + '</a>' + tweet.created_at + '' + tweet.message);
 
             $tweet.prependTo($body);
             newIndex -= 1;
@@ -57,9 +62,66 @@
         });
 
         $(remove).on('click', function() {
-          $('.tweets').remove()
+          $('.tweets').toggle()
         });
 
+
+
+        // Selecting individual user feeds
+
+        $('.shawndrost').on('click', function() {
+          $('.tweets').hide();
+          $('.shawndrost').show();
+        });
+
+        $('.sharksforcheap').on('click', function() {
+          $('.tweets').hide();
+          $('.sharksforcheap').show();
+        });
+
+        $('.mracus').on('click', function() {
+          $('.tweets').hide();
+          $('.mracus').show();
+        });
+
+        $('.douglascalhoun').on('click', function() {
+          $('.tweets').hide();
+          $('.douglascalhoun').show();
+        });
+
+
+
+        //Refresh function
+          /*
+        var refreshFeed = function() {
+
+          var newIndex = streams.home.length - 1;
+       
+          while(newIndex >= index){
+            var tweet = streams.home[newIndex];
+            var $tweet = $('<div class="' + tweet.user + ' tweets"></div>');
+            var timestamp = $.now();
+            $tweet.html('<a class="user">' + '@' + tweet.user + '</a>' + Date(timestamp) + '' + tweet.message);
+
+            $tweet.prependTo($body);
+            newIndex -= 1;
+
+          };
+
+          refresh.prependTo($body);
+        
+          index = streams.home.length - 1
+
+          };
+            */
+          /*
+          var scheduleRefresh = function() {
+            refreshFeed();
+            window.setTimeout(scheduleRefresh, 500);
+          };
+          scheduleRefresh();
+          */
+     
       });
 
     </script>

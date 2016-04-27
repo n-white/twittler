@@ -1,3 +1,19 @@
+.refresh {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.remove {
+  position: fixed;
+  top: 50px;
+  left: 0;
+}
+
+.tweets {
+  padding: 0 0 0 100px ;
+}
+
 /*
 body {
 	background-color: #F5F8FA;
