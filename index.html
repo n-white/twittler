@@ -13,6 +13,10 @@
         $body.html('');
 
         var index = streams.home.length - 1;
+
+        var refresh = $('<a class=refresh>Refresh<a>');
+        refresh.appendTo($body);
+
         while(index >= 0){
           var tweet = streams.home[index];
           var $tweet = $('<div></div>');
@@ -22,6 +26,22 @@
           $tweet.appendTo($body);
           index -= 1;
         }
+
+        $(refresh).on('click', function() {
+
+          var index = streams.home.length - 1;
+
+          while(index >= 0){
+          var tweet = streams.home[index];
+          var $tweet = $('<div></div>');
+          var timestamp = $.now();
+          $tweet.html('<a class="user">' + '@' + tweet.user + '</a><br>' + Date(timestamp) + '<br>' + tweet.message);
+
+          $tweet.appendTo($body);
+          index -= 1;
+        }
+
+        });
 
       });
 

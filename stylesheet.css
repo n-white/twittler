@@ -32,3 +32,18 @@ div {
 .user:hover {
 	text-decoration: underline;
 }
+
+.refresh {
+  background-color: #FFF;
+  border: 1px solid #C7C7C7;
+  padding: 10px 30px;
+  height: 75px;
+  border-radius: 5px;
+  color: #000;
+  cursor: pointer;
+  display: block;
+  line-height: 1.5em;
+  font-weight: 400;
+  letter-spacing: .5px;
+  margin: 10px;
+}
