@@ -1,5 +1,5 @@
 body {
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .buttons {
@@ -32,8 +32,15 @@ body {
   font: helvetica;
 }
 
+.tweetmessage {
+  position: fixed;
+  left: 525px;
+}
+
 .timestamp {
-  color: #FFF;
+  color: rgba(0, 0, 0, 0.45);
+  position: fixed;
+  left: 900px;
 }
 
 .userbox {
@@ -48,6 +55,18 @@ body {
   text-transform: uppercase;
   padding: 5px;
 }
+
+.user {
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.user:hover {
+  background-color: #000;
+  color: #FFF;
+}
+
 
 /*
 div {
@@ -71,14 +90,6 @@ div {
 
 #refresh {
 	background-color: #000;
-}
-
-.user {
-	color: #055C96;
-}
-
-.user:hover {
-	text-decoration: underline;
 }
 
 .refresh {

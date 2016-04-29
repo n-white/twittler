@@ -32,7 +32,7 @@
             var tweet = streams.home[newIndex];
             var $tweet = $('<div class="' + tweet.user + ' tweets"></div>');
             var timestamp = $.now();
-            $tweet.html('<a class="user">' + '@' + tweet.user + '</a>' + '' + tweet.message + '<a class=timestamp> || ' + tweet.created_at + '</a>');
+            $tweet.html('<a class="user">' + '@' + tweet.user + '</a>' + '<a class=tweetmessage>    ' + tweet.message + '</a>' + '<a class=timestamp>' + tweet.created_at + '</a>');
 
             $tweet.prependTo($body);
             newIndex -= 1;
