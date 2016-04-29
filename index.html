@@ -15,11 +15,9 @@
         var $body = $('body');
         $body.html('');
         var index = streams.home.length - 1;
-        var refresh = $('<div class="refresh buttons">refresh</div>');
+        var refresh = $('<div class="refreshButton">click to load new tweets</div>');
         refresh.appendTo($body);
-        var remove = $('<div class="remove buttons">back</div>');
-        remove.appendTo($body);
-        var userList = $('<div class="userbox">users you follow:</div>')
+        var userList = $('<div class="userbox"><h1>users you follow:<br><br></h1></div>')
         userList.appendTo($body);
 
         // Button click to add new tweets
@@ -32,7 +30,7 @@
             var tweet = streams.home[newIndex];
             var $tweet = $('<div class="' + tweet.user + ' tweets"></div>');
             var timestamp = $.now();
-            $tweet.html('<a class="user">' + '@' + tweet.user + '</a>' + '<a class=tweetmessage>    ' + tweet.message + '</a>' + '<a class=timestamp>' + tweet.created_at + '</a>');
+            $tweet.html('<a class="username">' + '@' + tweet.user + '</a>' + '<a class=tweetmessage>    ' + tweet.message + '</a>' + '<a class=timestamp>' + tweet.created_at + '</a>');
 
             $tweet.prependTo($body);
             newIndex -= 1;
@@ -45,35 +43,48 @@
 
         });
 
-
-        $(remove).on('click', function() {
-          $('.tweets').toggle()
+        
+        $(refresh).on('click', function() {
+          $('.tweets').show()
         });
-
+    
 
 
         // Selecting individual user feeds
 
-        $('.tweets').on('click', function() {
-          $(this).hide();
+        var shawndrost = $('<div class=user>@shawndrost<br><br></div>')
+        shawndrost.appendTo(userList);
+        var sharksforcheap = $('<div class=user>@sharksforcheap<br><br></div>')
+        sharksforcheap.appendTo(userList);
+        var mracus = $('<div class=user>@mracus<br><br></div>')
+        mracus.appendTo(userList);
+        var douglascalhoun = $('<div class=user>@douglascalhoun<br><br></div>')
+        douglascalhoun.appendTo(userList);
 
-        });
 
-        $('<div class="mracus tweets"></div>').on('click', function() {
-          $('.tweets').hide();
-          $('.mracus').show();
-        });
-
-        $('.mracus').on('click', function() {
-          $('.tweets').hide();
-          $('.mracus').show();
-        });
-
-        $('.douglascalhoun').on('click', function() {
-          $('.tweets').hide();
-          $('.douglascalhoun').show();
+        $(shawndrost).on('click', function() {
+          $('.tweets').hide()
+          $('.shawndrost').show();
         });
      
+        $(sharksforcheap).on('click', function() {
+          $('.tweets').hide()
+          $('.sharksforcheap').show();
+        });
+
+        $(mracus).on('click', function() {
+          $('.tweets').hide()
+          $('.mracus').show();
+        });
+
+        $(douglascalhoun).on('click', function() {
+          $('.tweets').hide()
+          $('.douglascalhoun').show();
+        });
+
+
+
+
       });
 
     </script>
