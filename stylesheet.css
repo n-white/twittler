@@ -10,7 +10,8 @@ body {
   width: 250px;
   font-weight: bold;
   text-transform: uppercase;
-  font: 40px/1 helvetica;
+  font-size: 38px;
+  font-family: Helvetica;
   color: #FFF;
   background-color: #39F;
 }
@@ -33,7 +34,7 @@ body {
 .timestamp {
   color: rgba(0, 0, 0, 0.45);
   position: fixed;
-  left: 890px;
+  left: 900px;
 }
 
 .userbox {
@@ -47,7 +48,7 @@ body {
 }
 
 .user {
-  color: #000;
+  color: #F00;
   text-transform: uppercase;
   font: 15px helvetica;
   font-weight: bold;
@@ -73,43 +74,3 @@ h1 {
   text-transform: uppercase;
 }
 
-
-/*
-div {
-  background-color: #FFF;
-  border: 1px solid #C7C7C7;
-  padding: 10px 30px;
-  height: 75px;
-  border-radius: 5px;
-  color: #000;
-  cursor: pointer;
-  display: block;
-  line-height: 1.5em;
-  font-weight: 400;
-  letter-spacing: .5px;
-  margin: 10px;
-}
-
-.timestamp {
-	color: gray;
-}
-
-#refresh {
-	background-color: #000;
-}
-
-.refresh {
-  background-color: #FFF;
-  border: 1px solid #C7C7C7;
-  padding: 10px 30px;
-  height: 75px;
-  border-radius: 5px;
-  color: #000;
-  cursor: pointer;
-  display: block;
-  line-height: 1.5em;
-  font-weight: 400;
-  letter-spacing: .5px;
-  margin: 10px;
-}
-*/
