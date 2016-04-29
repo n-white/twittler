@@ -15,10 +15,12 @@
         var $body = $('body');
         $body.html('');
         var index = streams.home.length - 1;
-        var refresh = $('<div class=refresh>Refresh</div>');
+        var refresh = $('<div class="refresh buttons">refresh</div>');
         refresh.appendTo($body);
-        var remove = $('<div class=remove>remove</div>');
+        var remove = $('<div class="remove buttons">back</div>');
         remove.appendTo($body);
+        var userList = $('<div class="userbox">users you follow:</div>')
+        userList.appendTo($body);
 
         // Button click to add new tweets
 
@@ -30,7 +32,7 @@
             var tweet = streams.home[newIndex];
             var $tweet = $('<div class="' + tweet.user + ' tweets"></div>');
             var timestamp = $.now();
-            $tweet.html('<a class="user">' + '@' + tweet.user + '</a>' + tweet.created_at + '' + tweet.message);
+            $tweet.html('<a class="user">' + '@' + tweet.user + '</a>' + '' + tweet.message + '<a class=timestamp> || ' + tweet.created_at + '</a>');
 
             $tweet.prependTo($body);
             newIndex -= 1;
@@ -52,14 +54,14 @@
 
         // Selecting individual user feeds
 
-        $('.shawndrost').on('click', function() {
+        $('.tweets').on('click', function() {
           $(this).hide();
 
         });
 
-        $('.sharksforcheap').on('click', function() {
+        $('<div class="mracus tweets"></div>').on('click', function() {
           $('.tweets').hide();
-          $('.sharksforcheap').show();
+          $('.mracus').show();
         });
 
         $('.mracus').on('click', function() {

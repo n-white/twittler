@@ -1,24 +1,55 @@
+body {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.buttons {
+  height: 40px;
+  width: 200px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font: 40px/1 helvetica;
+}
+
+.buttons:hover {
+  background-color: #000;
+  color: #FFF;
+}
+
 .refresh {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 30px;
+  left: 20px;
 }
 
 .remove {
   position: fixed;
-  top: 50px;
-  left: 0;
+  top: 70px;
+  left: 20px;
 }
 
 .tweets {
-  padding: 0 0 0 100px ;
+  padding: 20px 0 0 300px;
+  font: helvetica;
+}
+
+.timestamp {
+  color: #FFF;
+}
+
+.userbox {
+  position: fixed;
+  height: 400px;
+  width: 185px;
+  top: 150px;
+  left: 20px;
+  border: 3px solid #000;
+  font: 20px helvetica;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px;
 }
 
 /*
-body {
-	background-color: #F5F8FA;
-}
-
 div {
   background-color: #FFF;
   border: 1px solid #C7C7C7;
