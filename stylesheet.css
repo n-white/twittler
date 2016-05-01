@@ -26,19 +26,8 @@ body {
   font: helvetica;
 }
 
-.tweetmessage {
-  position: fixed;
-  left: 525px;
-}
-
-.timestamp {
-  color: rgba(0, 0, 0, 0.45);
-  position: fixed;
-  left: 900px;
-}
-
 .userbox {
-  position: fixed;
+    position: fixed;
   height: 400px;
   width: 235px;
   top: 200px;
@@ -61,6 +50,17 @@ body {
   font: 15px helvetica;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.tweetmessage {
+  position: absolute;
+  left: 525px;
+}
+
+.timestamp {
+  color: rgba(0, 0, 0, 0.45);
+  position: absolute;
+  left: 900px;
 }
 
 .user:hover {
